@@ -1,24 +1,32 @@
 public class App {
-//    public static void main(String[] args) {
+//    public static int main(String[] args) {
 
 //        https://habr.com/ru/company/golovachcourses/blog/223821/
 
+
 //        public static void main(String[] args) throws String {}
+
 
 //        try {
 //        } catch (Throwable t) {}
 
+
 //        try {
 //        } catch (String s) {}
 
+
 //        throw new Error();
+
 
 //        throw new String("Hello!");
 
+
 //        throw null;
+
 
 //        Error ref = new Error(); // создаем экземпляр
 //        throw ref;               // "бросаем" его
+
 
 //        f(null);
 //    }
@@ -29,27 +37,35 @@ public class App {
 //            f(npe);
 //        }
 
-//        System.out.println("sout");
-//        throw new Error();
 
 //        System.out.println("sout");
 //        throw new Error();
+
+
+//        System.out.println("sout");
+//        throw new Error();
+
 
 //        public double sqr(double arg) { // надо double
 //            return arg * arg; }          // double * double - это double
+
 
 //        public double sqr(double arg) { // надо double
 //            int k = 1;                  // есть int
 //            return k; }                  // можно неявно преобразовать int в double
 
+
 //        public double sqr(double arg) { // надо double
 //            int k = 1;                  // есть int
 //            return (double) k;  }        // явное преобразование int в double
 
+
 //        public static double sqr(double arg) {
 //            return "hello!"; }
 
+
 //        public static double sqr(double arg) {}
+
 
 //        public static double sqr(double arg) {
 //            if (System.currentTimeMillis() % 2 == 0) {
@@ -57,6 +73,7 @@ public class App {
 //            }
 //            // а если нечетное, что нам возвращать?
 //        }
+
 
 //        public static void main(String[] args) {
 //            double d = sqr(10.0); // ну, и чему равно d?
@@ -66,9 +83,11 @@ public class App {
 //            // nothing
 //        }
 
+
 //        public static double sqr ( double arg){
 //            while (true) ;
 //        } // Удивительно, но КОМПИЛИРУЕТСЯ!
+
 
 //        double d = sqr(10.0);  // sqr - навсегда "повиснет", и
 //        System.out.println(d); // d - НИКОГДА НИЧЕГО НЕ БУДЕТ ПРИСВОЕНО!
@@ -77,13 +96,347 @@ public class App {
 //        while (true); // Вот тут мы на века "повисли"
 //    }
 
-        public static double sqr(double arg) {
-            if (System.currentTimeMillis() % 2 == 0) {
-                return arg * arg; // ну ладно, вот твой double
-            } else {
-                while (true);     // а тут "виснем" навсегда
+
+//        public static double sqr(double arg) {
+//            if (System.currentTimeMillis() % 2 == 0) {
+//                return arg * arg; // ну ладно, вот твой double
+//            } else {
+//                while (true);     // а тут "виснем" навсегда
+//            }
+//        }
+
+
+//        public static double sqr ( double arg){
+//            throw new RuntimeException();
+//        }
+
+
+//        public static double sqr(double arg) {// согласно объявлению метода ты должен вернуть double
+//            long time = System.currentTimeMillis();
+//            if (time % 2 == 0) {
+//                return arg * arg;             // ок, вот твой double
+//            } else if (time % 2 == 1) { {
+//                while (true);                 // не, я решил "повиснуть"
+//            } else {
+//                throw new RuntimeException(); // или бросить исключение
+//            }
+//            }
+
+
+//        // sqr - "сломается" (из него "выскочит" исключение),
+//        double d = sqr(10.0);  // выполнение метода main() прервется в этой строчке и
+//        // d - НИКОГДА НИЧЕГО НЕ БУДЕТ ПРИСВОЕНО!
+//        System.out.println(d); // и печатать нам ничего не придется!
+//    }
+//    public static double sqr(double arg) {
+//        throw new RuntimeException(); // "бросаем" исключение
+//    }
+
+
+//    public static void area(int width, int height) {
+//        if (width < 0 || height < 0) {
+//            // у вас плохие аргументы, извините
+//        } else {
+//            return width * height;
+//        }
+//    }
+
+
+//        public static int area ( int width, int height){
+//            if (width < 0 || height < 0) {
+//                System.out.println("Bad ...");
+//            }
+//            return width * height;
+//        }
+
+
+//        public static int area(int width, int height) {
+//            if (width < 0 || height < 0) {
+//                return -1; // специальное "неправильное" значение площади
+//            }
+//            return width * height;
+//        }
+
+
+//        public static int area(int width, int height) {
+//            if (width < 0 || height < 0) {
+//                System.exit(0);
+//            }
+//            return width * height;
+//        }
+
+
+//        public static int area(int width, int height) {
+//            if (width < 0 || height < 0) {
+//                throw new IllegalArgumentException("Negative sizes: w = " + width + ", h = " + height);
+//            }
+//            return width * height;
+
+//        public static void main(String[] args) {
+//        System.err.println("#1.in");
+//        f(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println("#1.out"); // вернулись
+//    } // выходим из текущего фрейма, кончились инструкции
+//
+//    public static void f() {
+//        System.err.println(".   #2.in");
+//        g(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   #2.out");  //вернулись
+//    } // выходим из текущего фрейма, кончились инструкции
+//
+//    public static void g() {
+//        System.err.println(".   .   #3.in");
+//        h(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   .   #3.out"); // вернулись
+//    } // выходим из текущего фрейма, кончились инструкции
+//
+//    public static void h() {
+//        System.err.println(".   .   .   #4.in");
+//        if (true) {
+//            System.err.println(".   .   .   #4.RETURN");
+//            return; // выходим из текущего фрейма по 'return'
+//        }
+//        System.err.println(".   .   .   #4.out"); // ПРОПУСКАЕМ
+// }
+
+
+//    public static void main(String[] args) {
+//        System.err.println("#1.in");
+//        f(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println("#1.out"); // ПРОПУСТИЛИ!
+//    }
+//
+//    public static void f() {
+//        System.err.println(".   #2.in");
+//        g(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   #2.out"); // ПРОПУСТИЛИ!
+//    }
+//
+//    public static void g() {
+//        System.err.println(".   .   #3.in");
+//        h(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   .   #3.out"); // ПРОПУСТИЛИ!
+//    }
+//
+//    public static void h() {
+//        System.err.println(".   .   .   #4.in");
+//        if (true) {
+//            System.err.println(".   .   .   #4.THROW");
+//            throw new Error(); // выходим со всей пачки фреймов ("раскрутка стека") по 'throw'
+//        }
+//        System.err.println(".   .   .   #4.out"); // ПРОПУСТИЛИ!
+//    }
+
+
+//    public static void main(String[] args) {
+//        System.err.println("#1.in");
+//        try {
+//            f(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        } catch (Error e) { // "перехватили" "летящее" исключение
+//            System.err.println("#1.CATCH");  // и работаем
+//        }
+//        System.err.println("#1.out");  // работаем дальше
+//    }
+//
+//    public static void f() {
+//        System.err.println(".   #2.in");
+//        g(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   #2.out"); // ПРОПУСТИЛИ!
+//    }
+//
+//    public static void g() {
+//        System.err.println(".   .   #3.in");
+//        h(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   .   #3.out"); // ПРОПУСТИЛИ!
+//    }
+//
+//    public static void h() {
+//        System.err.println(".   .   .   #4.in");
+//        if (true) {
+//            System.err.println(".   .   .   #4.THROW");
+//            throw new Error(); // выходим со всей пачки фреймов ("раскрутка стека") по 'throw'
+//        }
+//        System.err.println(".   .   .   #4.out"); // ПРОПУСТИЛИ!
+//    }
+
+
+//        public static void main(String[] args) {
+//            System.err.println("#1.in");
+//            f(); // создаем фрейм, помещаем в стек, передаем в него управление
+//            System.err.println("#1.out"); // вернулись и работаем
+//        }
+//
+//        public static void f() {
+//            System.err.println(".   #2.in");
+//            try {
+//                g(); // создаем фрейм, помещаем в стек, передаем в него управление
+//            } catch (Error e) { // "перехватили" "летящее" исключение
+//                System.err.println(".   #2.CATCH");  // и работаем
+//            }
+//            System.err.println(".   #2.out");  // работаем дальше
+//        }
+//
+//        public static void g() {
+//            System.err.println(".   .   #3.in");
+//            h(); // создаем фрейм, помещаем в стек, передаем в него управление
+//            System.err.println(".   .   #3.out"); // ПРОПУСТИЛИ!
+//        }
+//
+//        public static void h() {
+//            System.err.println(".   .   .   #4.in");
+//            if (true) {
+//                System.err.println(".   .   .   #4.THROW");
+//                throw new Error(); // выходим со всей пачки фреймов ("раскрутка стека") по 'throw'
+//            }
+//            System.err.println(".   .   .   #4.out"); // ПРОПУСТИЛИ!
+//        }
+
+
+//    public static void main(String[] args) {
+//        System.err.println("#1.in");
+//        f(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println("#1.out"); // вернулись и работаем
+//    }
+//
+//    public static void f() {
+//        System.err.println(".   #2.in");
+//        g(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        System.err.println(".   #2.out"); // вернулись и работаем
+//    }
+//
+//    public static void g() {
+//        System.err.println(".   .   #3.in");
+//        try {
+//            h(); // создаем фрейм, помещаем в стек, передаем в него управление
+//        } catch (Error e) { // "перехватили" "летящее" исключение
+//            System.err.println(".   .   #3.CATCH");  // и работаем
+//        }
+//        System.err.println(".   .   #3.out");  // работаем дальше
+//    }
+//
+//    public static void h() {
+//        System.err.println(".   .   .   #4.in");
+//        if (true) {
+//            System.err.println(".   .   .   #4.THROW");
+//            throw new Error(); // выходим со всей пачки фреймов ("раскрутка стека") по 'throw'
+//        }
+//        System.err.println(".   .   .   #4.out"); // ПРОПУСТИЛИ!
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new RuntimeException();}
+//            System.err.print(" 1");
+//        } catch (Exception e) { // catch по Exception ПЕРЕХВАТЫВАЕТ RuntimeException
+//            System.err.print(" 2");
+//        }
+//        System.err.println(" 3");
+//    }
+
+//    public static void main(String[] args) {
+//        try {
+//            throw new RuntimeException();
+//        } catch (Exception e) {
+//            if (e instanceof RuntimeException) {
+//                RuntimeException re = (RuntimeException) e;
+//                System.err.print("Это RuntimeException на самом деле!!!");
+//            } else {
+//                System.err.print("В каком смысле не RuntimeException???");
+//            }
+//        }
+//    }
+
+
+//    public static void main(String[] args) throws Exception { // пока игнорируйте 'throws'
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new Exception();}
+//            System.err.print(" 1");
+//        } catch (RuntimeException e) {
+//            System.err.print(" 2");
+//        }
+//        System.err.print(" 3");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new Error();}
+//            System.err.print(" 1");
+//        } catch (Exception e) {
+//            System.err.print(" 2");
+//        }
+//        System.err.print(" 3");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new RuntimeException();}
+//            System.err.print(" 1");
+//        } catch (RuntimeException e) {     // перехватили RuntimeException
+//            System.err.print(" 2");
+//            if (true) {throw new Error();} // но бросили Error
+//        }
+//        System.err.println(" 3");          // пропускаем - уже летит Error
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new RuntimeException();}
+//            System.err.print(" 1");
+//        } catch (RuntimeException e) { // перехватили RuntimeException
+//            System.err.print(" 2");
+//            if (true) {throw e;}       // и бросили ВТОРОЙ раз ЕГО ЖЕ
+//        }
+//        System.err.println(" 3");      // пропускаем - опять летит RuntimeException
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new RuntimeException();}
+//            System.err.print(" 1");
+//        } catch (RuntimeException e) {     // перехватили RuntimeException
+//            System.err.print(" 2");
+//            if (true) {throw new Error();} // и бросили новый Error
+//        } catch (Error e) { // хотя есть cath по Error "ниже", но мы в него не попадаем
+//            System.err.print(" 3");
+//        }
+//        System.err.println(" 4");
+//    }
+
+
+    public static void main(String[] args) {
+        try {
+            System.err.print(" 0");
+            if (true) {throw new RuntimeException();}
+            System.err.print(" 1");
+        } catch (RuntimeException e) { // перехватили RuntimeException
+            System.err.print(" 2.1");
+            try {
+                System.err.print(" 2.2");
+                if (true) {throw new Error();} // и бросили новый Error
+                System.err.print(" 2.3");
+            } catch (Throwable t) {            // перехватили Error
+                System.err.print(" 2.4");
             }
-
-
+            System.err.print(" 2.5");
+        } catch (Error e) { // хотя есть cath по Error "ниже", но мы в него не попадаем
+            System.err.print(" 3");
+        }
+        System.err.println(" 4");
     }
+
+
+
+
+
 }

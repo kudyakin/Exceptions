@@ -414,27 +414,284 @@ public class App {
 //    }
 
 
-    public static void main(String[] args) {
-        try {
-            System.err.print(" 0");
-            if (true) {throw new RuntimeException();}
-            System.err.print(" 1");
-        } catch (RuntimeException e) { // перехватили RuntimeException
-            System.err.print(" 2.1");
-            try {
-                System.err.print(" 2.2");
-                if (true) {throw new Error();} // и бросили новый Error
-                System.err.print(" 2.3");
-            } catch (Throwable t) {            // перехватили Error
-                System.err.print(" 2.4");
-            }
-            System.err.print(" 2.5");
-        } catch (Error e) { // хотя есть cath по Error "ниже", но мы в него не попадаем
-            System.err.print(" 3");
-        }
-        System.err.println(" 4");
-    }
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new RuntimeException();}
+//            System.err.print(" 1");
+//        } catch (RuntimeException e) { // перехватили RuntimeException
+//            System.err.print(" 2.1");
+//            try {
+//                System.err.print(" 2.2");
+//                if (true) {throw new Error();} // и бросили новый Error
+//                System.err.print(" 2.3");
+//            } catch (Throwable t) {            // перехватили Error
+//                System.err.print(" 2.4");
+//            }
+//            System.err.print(" 2.5");
+//        } catch (Error e) { // хотя есть cath по Error "ниже", но мы в него не попадаем
+//            System.err.print(" 3");
+//        }
+//        System.err.println(" 4");
+//    }
 
+
+//    public static void main(String[] args) {
+//        try {
+//        } catch (Exception e) {
+//        } catch (RuntimeException e) {
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//        } catch (Error e) {
+//        } catch (RuntimeException e) {
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            throw new Exception();
+//        } catch (RuntimeException e) {
+//            System.err.println("catch RuntimeException");
+//        } catch (Exception e) {
+//            System.err.println("catch Exception");
+//        } catch (Throwable e) {
+//            System.err.println("catch Throwable");
+//        }
+//        System.err.println("next statement");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            Throwable t = new Exception(); // ссылка типа Throwable указывает на объект типа Exception
+//            throw t;
+//        } catch (RuntimeException e) {
+//            System.err.println("catch RuntimeException");
+//        } catch (Exception e) {
+//            System.err.println("catch Exception");
+//        } catch (Throwable e) {
+//            System.err.println("catch Throwable");
+//        }
+//        System.err.println("next statement");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.println("try");
+//        } finally {
+//            System.err.println("finally");
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            throw new RuntimeException();
+//        } finally {
+//            System.err.println("finally");
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            return;
+//        } finally {
+//            System.err.println("finally");
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.exit(42);
+//        } finally {
+//            System.err.println("finally");
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            Runtime.getRuntime().exit(42);
+//        } finally {
+//            System.err.println("finally");
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            Runtime.getRuntime().halt(42);
+//        } finally {
+//            System.err.println("finally");
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.println("try");
+//            if (true) {throw new RuntimeException();}
+//        } finally {
+//            System.err.println("finally");
+//        }
+//        System.err.println("more");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.println("try");
+//            throw new RuntimeException();
+//        } finally {
+//            System.err.println("finally");
+//        }
+//        System.err.println("more");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.println("try");
+//            if (true) {return;}
+//        } finally {
+//            System.err.println("finally");
+//        }
+//        System.err.println("more");
+//    }
+
+
+//    public static void main(String[] args) {
+//        System.err.println(f());
+//    }
+//    public static int f() {
+//        try {
+//            return 0;
+//        } finally {
+//            return 1;
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        System.err.println(f());
+//    }
+//    public static int f() {
+//        try {
+//            throw new RuntimeException();
+//        } finally {
+//            return 1;
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        System.err.println(f());
+//    }
+//    public static int f() {
+//        try {
+//            return 0;
+//        } finally {
+//            throw new RuntimeException();
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        System.err.println(f());
+//    }
+//    public static int f() {
+//        try {
+//            throw new Error();
+//        } finally {
+//            throw new RuntimeException();
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        System.err.println(f());
+//    }
+//
+//    public static int f() {
+//        long rnd = System.currentTimeMillis();
+//        boolean finished = false;
+//        try {
+//            if (rnd % 3 == 0) {
+//                throw new Error();
+//            } else if (rnd % 3 == 1) {
+//                throw new RuntimeException();
+//            } else {
+//                // nothing
+//            }
+//            finished = true;
+//        } finally {
+//            if (finished) {
+//                // не было исключений
+//            } else {
+//                // было исключение, но какое?
+//            }
+//        }
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            // nothing
+//            System.err.print(" 1");
+//        } catch(Error e) {
+//            System.err.print(" 2");
+//        } finally {
+//            System.err.print(" 3");
+//        }
+//        System.err.print(" 4");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new Error();}
+//            System.err.print(" 1");
+//        } catch(Error e) {
+//            System.err.print(" 2");
+//        } finally {
+//            System.err.print(" 3");
+//        }
+//        System.err.print(" 4");
+//    }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.err.print(" 0");
+//            if (true) {throw new RuntimeException();}
+//            System.err.print(" 1");
+//        } catch(Error e) {
+//            System.err.print(" 2");
+//        } finally {
+//            System.err.print(" 3");
+//        }
+//        System.err.print(" 4");
+//    }
+
+
+    public static void main(String[] args) {
+        if (args.length > 1) {
+            if (args.length > 2) {
+                if (args.length > 3) {
+                }
+            }
+        }
+    }
 
 
 

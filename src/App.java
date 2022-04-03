@@ -1,8 +1,8 @@
-public class App {
-//    public static int main(String[] args) {
-
 //        https://habr.com/ru/company/golovachcourses/blog/223821/
 
+public class App {
+
+//    public static int main(String[] args) {
 
 //        public static void main(String[] args) throws String {}
 
